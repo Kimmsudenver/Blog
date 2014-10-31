@@ -1,4 +1,4 @@
-Blog
+NodeJS
 ====
 
-Create my website for blogging about math and code from scratch with NodeJs (Express Framework), MongoDB, Jade . First version
+Create web app that read info from crypto-currency exchange every 30 minutes and display data.
