@@ -1,8 +1,12 @@
 extends layout
 
 block content
-	h1 Welcome to #{title}
-	h2 Posts
+	h1 Crypto-Currency API info:
+	form(name="input" method="post" action="/")
 	ul
-		each val in postItem
-			li=  val.title
+		for item in items
+			li= "URL: "+item.url
+			li= item.usd
+			li= item.btc
+script(src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
+script(src='stylesheet/bootstrap-3.2.0/bootstrap.min.js')

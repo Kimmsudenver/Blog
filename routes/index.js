@@ -6,17 +6,16 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Express' });
 });
 
+
 /* Get Main page */
 router.get('/main',function(req,res){
-	res.render('main',{title: "Web Application Posts"});
 	var db = req.db;
-	var collection = db.get('posts');
-	collection.find({},{},function(e,docs){
-		console.log(docs);
+	var collection = db.get('source');	
+	collection.find({},function(e,docs){
 		res.render('main',{
-			"postItem" : docs
+			"items" : docs
 		});
-	});
-
+	});	
 });
+
 module.exports = router;
