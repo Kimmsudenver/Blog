@@ -8,8 +8,11 @@ var bodyParser = require('body-parser');
 //adding database
 var mongo = require('mongodb');
 var connect = require('connect');
+var monk = require('monk');
 var mongo = require('mongodb');
-var db = null;
+var mongostr= "mongodb://root:test@ds047940.mongolab.com:47940/heroku_app31160925";
+var db = monk(mongostr);
+/*var db = null;
 
 var mongostr = "mongodb://heroku_app31160925:k2icuc1f515497r21bl8pf1j37@ds047940.mongolab.com:47940/heroku_app31160925";
 
@@ -24,7 +27,7 @@ mongo.connect(mongostr, {}, function(error, result)
 
             });
 });
-
+*/
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
