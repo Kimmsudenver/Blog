@@ -17,6 +17,7 @@
     "debug": "~2.0.0",
     "jade": "*",
 	"mongodb": "*",
-	"monk": "*"
+	"monk": "*",
+  "connect": "*"
   }
 }
