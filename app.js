@@ -102,7 +102,7 @@ var urlstr= "https://btc-e.com/api/3/ticker/ltc_btc-ltc_usd";
 scrape_btc_e(urlstr,db.get('btc_edb'));
 
 
-
+/*
 function scrape_cryptsy(urlstr, collection){
     setInterval(function(){
     request(urlstr,function(e,json){
@@ -123,9 +123,11 @@ function scrape_cryptsy(urlstr, collection){
     });
     },3000);
         
+        *
 }
 var urlstr= "http://pubapi.cryptsy.com/api.php?method=marketdatav2";
 scrape_cryptsy(urlstr,db.get('cryptsydb'));
+*/
 
 
 module.exports = app;
