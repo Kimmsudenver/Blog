@@ -20,7 +20,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
-var server = app.listen( process.env.PORT || 3000);
+var server = app.listen( process.env.PORT || 5000);
 var io = require('socket.io').listen(server);
 
 // view engine setup
