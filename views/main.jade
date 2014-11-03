@@ -1,12 +1,21 @@
 extends layout
 
 block content
-	h1 Crypto-Currency API info:
-	form(name="input" method="post" action="/")
-	ul
-		for item in items
-			li= "URL: "+item.url
-			li= item.usd
-			li= item.btc
-script(src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
-script(src='stylesheet/bootstrap-3.2.0/bootstrap.min.js')
+	h1 Crypto-Currency API info:	
+	table
+		tr
+			td URL
+			td UZD
+			td BTC
+			td VOLUME
+			td TIME
+		for item, i in items
+			tr
+				td=item.url
+				td=item.usd
+				td=item.btc
+				td=item.volume
+				td=item.time
+	p= markets
+	script(src='')
+	script(src='public/javascripts/main.js')

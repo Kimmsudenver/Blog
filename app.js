@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var http = require('http');
 
 //adding database
 var mongo = require('mongodb');
@@ -12,26 +13,14 @@ var monk = require('monk');
 var mongo = require('mongodb');
 var mongostr= "mongodb://root:test@ds047940.mongolab.com:47940/heroku_app31160925";
 var db = monk(mongostr);
-/*var db = null;
+var api = db.get('source');
 
-var mongostr = "mongodb://heroku_app31160925:k2icuc1f515497r21bl8pf1j37@ds047940.mongolab.com:47940/heroku_app31160925";
-
-mongo.connect(mongostr, {}, function(error, result)
-    {       
-            console.log("connected, db: " + result);
-
-            db = result;
-
-            db.addListener("error", function(error){
-            console.log("Error connecting to MongoLab");
-
-            });
-});
-*/
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+var server = app.listen( process.env.PORT || 3000);
+var io = require('socket.io').listen(server);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -85,5 +74,10 @@ app.use(function(err, req, res, next) {
     });
 });
 
+/*setInterval(function(){
+    var lastItem = api.find({},{last :{$slice:[n,n-1]}});
+io.sockets.emit('info',last);
+},3000);
+*/
 
 module.exports = app;
