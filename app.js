@@ -127,7 +127,7 @@ function scrape_cryptsy(urlstr, collection){
         //console.log(newItem);       
         
     });
-    }1800000);        
+    },1800000);        
 }
 scrape_cryptsy(urlstr,db.get('cryptsydb'));
 
