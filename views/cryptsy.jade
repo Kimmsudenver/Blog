@@ -9,7 +9,8 @@ block content
 				th USD value
 				th BTC value
 				th VOLUME
-				th TIME
+				th LAST TRADE TIME
+				th ACCESS TIME
 		tbody
 		for item, i in cryptsy
 			tr
@@ -18,4 +19,5 @@ block content
 				td=item.btc
 				td=item.volume
 				td=item.time
+				td= item.access_time
 	
