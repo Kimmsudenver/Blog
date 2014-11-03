@@ -20,8 +20,8 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
-var server = app.listen( process.env.PORT || 5000);
-var io = require('socket.io').listen(server);
+//var server = app.listen( process.env.PORT || process.env.OPENSHIFT_INTERNAL_PORT||5000);
+//var io = require('socket.io').listen(server);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
