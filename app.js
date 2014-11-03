@@ -94,13 +94,13 @@ function scrape_btc_e(urlstr, collection){
         var btc_values=jbody.ltc_btc;   
         var usd_values = jbody.ltc_usd; 
         var date = new Date();
-        var newItem={"pair":"LTC-BTC","url":urlstr,"usd":0,"btc":btc_values.avg,"volume":btc_values.vol,"time":btc_values.last,"access_time":date};
+        var newItem={"pair":"LTC-BTC","url":urlstr,"usd":0,"btc":btc_values.avg,"volume":btc_values.vol,"lasttradeprice":btc_values.last,"access_time":date};
         collection.insert(newItem); 
-        var newItem={"pair":"LTC-USD","url":urlstr,"usd":usd_values.avg,"btc":0,"volume":usd_values.vol,"time":usd_values.last,"access_time":date};  
+        var newItem={"pair":"LTC-USD","url":urlstr,"usd":usd_values.avg,"btc":0,"volume":usd_values.vol,"lasttradeprice":usd_values.last,"access_time":date};  
         collection.insert(newItem);
         //console.log(newItem);       
     });
-    },1800000);        
+    },3000);        
 }
 scrape_btc_e(urlstr,db.get('btc_edb'));
 
@@ -120,14 +120,14 @@ function scrape_cryptsy(urlstr, collection){
         var btc_values=markets["LTC\/BTC"];  
         var usd_values = markets["LTC\/USD"];  
         var date = new Date();  
-        var newItem={"pair":"LTC-BTC","url":urlstr,"usd":0,"btc":btc_values.lasttradeprice,"volume":btc_values.volume,"time":btc_values.lasttradetime,"access_time":date};
+        var newItem={"pair":"LTC-BTC","url":urlstr,"usd":0,"btc":btc_values.lasttradeprice,"volume":btc_values.volume,"lasttradeprice":btc_values.lasttradeprice,"access_time":date};
         collection.insert(newItem); 
-        var newItem={"pair":"LTC-USD","url":urlstr,"usd":usd_values.lasttradeprice,"btc":0,"volume":usd_values.volume,"time":usd_values.lasttradetime,"access_time":date};   
+        var newItem={"pair":"LTC-USD","url":urlstr,"usd":usd_values.lasttradeprice,"btc":0,"volume":usd_values.volume,"lasttradeprice":usd_values.lasttradeprice,"access_time":date};   
         collection.insert(newItem);
         //console.log(newItem);       
         
     });
-    },1800000);        
+    },3000);        
 }
 scrape_cryptsy(urlstr,db.get('cryptsydb'));
 
