@@ -100,7 +100,7 @@ function scrape_btc_e(urlstr, collection){
         collection.insert(newItem);
         //console.log(newItem);       
     });
-    },3000);        
+    },1800000);        
 }
 scrape_btc_e(urlstr,db.get('btc_edb'));
 
@@ -127,7 +127,7 @@ function scrape_cryptsy(urlstr, collection){
         //console.log(newItem);       
         
     });
-    },3000);        
+    },1800000);        
 }
 scrape_cryptsy(urlstr,db.get('cryptsydb'));
 
