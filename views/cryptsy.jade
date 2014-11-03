@@ -2,13 +2,15 @@ extends layout
 
 block content
 	h1 Crypto-Currency API info:	
-	table
-		tr
-			td URL
-			td UZD
-			td BTC
-			td VOLUME
-			td TIME
+	table.table.table-striped.table-bordered
+		thead
+			tr
+				th PAIR
+				th USD value
+				th BTC value
+				th VOLUME
+				th TIME
+		tbody
 		for item, i in cryptsy
 			tr
 				td=item.pair
@@ -16,6 +18,4 @@ block content
 				td=item.btc
 				td=item.volume
 				td=item.time
-	p= markets
-	script(src='')
-	script(src='public/javascripts/main.js')
+	
